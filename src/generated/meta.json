@@ -1,0 +1,14 @@
+{
+  "needleEditor": {
+    "enabled": true,
+    "components": true,
+    "materials": true,
+    "sceneCamera": false
+  },
+  "meta": null,
+  "absolutePath": null,
+  "sceneName": "Test",
+  "deployOnly": false,
+  "gzip": false,
+  "allowHotReload": false
+}
