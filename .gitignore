@@ -1,3 +1,5 @@
 node_modules/
 stats.html
 build.log
+package-lock.json
+dist

@@ -5,18 +5,17 @@
     "start": "vite --host",
     "pre-build": "tsc",
     "build:dev": "vite build",
-    "build:production": "npm run build:dev && npm run pack-gltf",
+    "build:production": "npm run build:dev && npm run transform",
     "serve": "vite preview",
     "copy-files": "copy-files-from-to",
-    "pack-gltf": "node --no-experimental-fetch node_modules/@needle-tools/gltf-build-pipeline/pack-gltf.mjs dist/assets no-toktx"
-
+    "transform": "npm run transform --prefix node_modules/@needle-tools/gltf-build-pipeline dist"
   },
   "dependencies": {
 	  "@needle-tools/engine": "2.67.9-pre",
-    "three": "npm:@needle-tools/three@^0.146.6",
-    "@needle-tools/gltf-build-pipeline": "1.1.0-alpha.1"
+    "three": "npm:@needle-tools/three@^0.146.6"
 	},
   "devDependencies": {
+    "@needle-tools/gltf-build-pipeline": "^1.1.2-alpha",
 	  "@needle-tools/needle-component-compiler": "^1.0.0",
 	  "@types/three": "0.146.0",
 	  "@vitejs/plugin-basic-ssl": "^0.1.2",
@@ -25,15 +24,5 @@
 	  "vite": "^3.1.4",
 	  "vite-plugin-compression": "^0.5.1",
 	  "@needle-tools/editor-sync": "latest"
-	},
-  "copyFiles": [
-    {
-      "from": "assets/**/*.*",
-      "to": "dist/assets/"
-    },
-    {
-      "from": "include/**/*.*",
-      "to": "dist/include/"
-    }
-  ]
+	}
 }
