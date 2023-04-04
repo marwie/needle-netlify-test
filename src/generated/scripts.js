@@ -177,7 +177,6 @@ import { Text } from "../../node_modules/@needle-tools/engine/src/engine-compone
 import { PresentationMode } from "../../node_modules/@needle-tools/engine/src/engine-components-experimental/Presentation";
 import { PlayerSync } from "../../node_modules/@needle-tools/engine/src/engine-components-experimental/networking/PlayerSync";
 import { PlayerState } from "../../node_modules/@needle-tools/engine/src/engine-components-experimental/networking/PlayerSync";
-import { MyTest } from "../../../../../Assets/Scenes/NpmDefs/_Npmdefs/SomeOtherName~/ComponentHasTextureReference";
 
 const out = {
 	AlignmentConstraint,
@@ -357,8 +356,7 @@ const out = {
 	Text,
 	PresentationMode,
 	PlayerSync,
-	PlayerState,
-	MyTest
+	PlayerState
 };
 
 

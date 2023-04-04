@@ -18,6 +18,21 @@ export default defineConfig(async ({ command }) => {
             basicSsl(),
             useGzip(needleConfig) ? viteCompression({ deleteOriginFile: true }) : null,
             needlePlugins(command, needleConfig),
+            {
+                name: 'post-build',
+                apply: 'build',
+                async closeBundle() {
+                    const fs = require('fs-extra');
+                    // copy assets dir
+                    const assetsDir = path.resolve(__dirname, 'assets');
+                    const outDir = path.resolve(__dirname, 'dist/assets');
+                    await fs.copy(assetsDir, outDir, { overwrite: true });
+                    // copy include dir
+                    const includeDir = path.resolve(__dirname, 'include');
+                    const outIncludeDir = path.resolve(__dirname, 'dist/include');
+                    await fs.copy(includeDir, outIncludeDir, { overwrite: true });
+                }
+            }
         ],
 
         server: {
